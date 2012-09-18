@@ -33,7 +33,7 @@
 								'mdp' => _request('mdp')
 							));
             
-          }else { echo "Batard t'es déjà inscrit. Biatch. GTFO.";}
+          }else { echo "Batard t'es déjà inscrit. Biatch. GTFO. Coup de couteau dans la GLO-O-O-O-O-TE !";}
           
             $email_to = $GLOBALS['meta']['email_webmaster'];
             $email_from = _request('email');
