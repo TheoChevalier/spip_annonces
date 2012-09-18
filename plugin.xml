@@ -1,13 +1,11 @@
 <plugin>
  <nom>Annonces</nom>
  <version>1.0</version>
- <prefix>
-	persona
-	</prefix>
-	<icon>prive/themes/spip/images/persona-32.png</icon>
+ <prefix>annonces</prefix>
   <etat>dev</etat>
  <auteur>Théo Chevalier [contact->mailto:contact@theochevalier.fr]
  _ [mon site->http://www.theochevalier.fr] - ................</auteur>
  <description>Ce plugin permet l'ajout de petites annonces. Il est distribu&eacute; sous licence GNU/GPL</description>
-
+ <fonctions>annonces_fonctions.php</fonctions>
+ <options>annonces_options.php</options>
 </plugin>
