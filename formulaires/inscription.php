@@ -8,7 +8,7 @@
             $erreurs = array();
             // verifier que les champs obligatoires sont bien la :
             foreach(array('email','nom', 'mdp') as $obligatoire)
-                    if (!_request($obligatoire)) $erreurs[$obligatoire] = 'Ce champ est obligatoire';
+            if (!_request($obligatoire)) $erreurs[$obligatoire] = 'Ce champ est obligatoire';
            
             // verifier que si un email a été saisi, il est bien valide :
             include_spip('inc/filtres');
@@ -27,7 +27,13 @@
 					$inscrit = sql_fetsel('*', 'spip_annonces_i', 'email='.sql_quote(_request('email')));
           if(!$inscrit) {
             echo "ET COUCOU";
-          }
+            	sql_insertq('spip_annonces_i', array(
+								'email' => _request('email'),
+								'nom' => _request('nom'),
+								'mdp' => _request('mdp')
+							));
+            
+          }else { echo "Batard t'es déjà inscrit. Biatch. GTFO.";}
           
             $email_to = $GLOBALS['meta']['email_webmaster'];
             $email_from = _request('email');

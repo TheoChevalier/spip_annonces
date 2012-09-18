@@ -1,15 +1,21 @@
-
+<!DOCTYPE html>
+<head>
+  [(#INSERT_HEAD_CSS|annonces_insert_head_css)]
+</head>
+<body>
 <form name="inscription_annonces" action="#ENV{action}" method="post">
   #ACTION_FORMULAIRE{#ENV{action}}
   <label>Votre email</label>
-        [<span class='erreur'>(#ENV**{erreurs}|table_valeur{email})</span>]
-        <input type='text' name='email' value='#ENV{email}' />
-        <br />
-        <label>Votre nom</label>
-        [<span class='erreur'>(#ENV**{erreurs}|table_valeur{nom})</span>]
-        <input type='text' name='nom' value='#ENV{nom}'/>
-        <label>Votre mot de passe </label>
-        [<span class='erreur'>(#ENV**{erreurs}|table_valeur{mdp})</span>]
-        <input type="password" name='mdp' value='#ENV{mdp}' />
-        <input type='submit' name='ok' value='ok' />
+    <input type='text' name='email' value='#ENV{email}' />[<span class='erreur'>(#ENV**{erreurs}|table_valeur{email})</span>]
+    <br />
+    <label>Votre nom</label>
+    
+    <input type='text' name='nom' value='#ENV{nom}'/>[<span class='erreur'>(#ENV**{erreurs}|table_valeur{nom})</span>]
+    <br/>
+    <label>Votre mot de passe </label>
+
+    <input type="password" name='mdp' value='#ENV{mdp}' />[<span class='erreur'>(#ENV**{erreurs}|table_valeur{mdp})</span>]
+    <br/>
+    <input type='submit' name='ok' value='ok' />
 </form>
+</body>
