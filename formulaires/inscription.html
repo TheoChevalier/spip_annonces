@@ -3,19 +3,22 @@
   [(#INSERT_HEAD_CSS|annonces_insert_head_css)]
 </head>
 <body>
-<form name="inscription_annonces" action="#ENV{action}" method="post">
-  #ACTION_FORMULAIRE{#ENV{action}}
-  <label>Votre email</label>
-    <input type='text' name='email' value='#ENV{email}' />[<span class='erreur'>(#ENV**{erreurs}|table_valeur{email})</span>]
-    <br />
-    <label>Votre nom</label>
-    
-    <input type='text' name='nom' value='#ENV{nom}'/>[<span class='erreur'>(#ENV**{erreurs}|table_valeur{nom})</span>]
-    <br/>
-    <label>Votre mot de passe </label>
-
-    <input type="password" name='mdp' value='#ENV{mdp}' />[<span class='erreur'>(#ENV**{erreurs}|table_valeur{mdp})</span>]
-    <br/>
-    <input type='submit' name='ok' value='ok' />
-</form>
+  <div id="inscription_annonces">
+    <form name="inscription_annonces" action="#ENV{action}" method="post">
+      #ACTION_FORMULAIRE{#ENV{action}}
+      <label>Votre adresse électronique
+        <input type='text' name='email' value='#ENV{email}' placeholder="Adresse électronique" required />
+        </label>[<span class='erreur'>(#ENV**{erreurs}|table_valeur{email})</span>]
+        <br />
+        <label>Votre nom
+        <input type='text' name='nom' value='#ENV{nom}' placeholder="Nom" required />
+        </label>[<span class='erreur'>(#ENV**{erreurs}|table_valeur{nom})</span>]
+        <br/>
+        <label>Votre mot de passe :
+        <input type="password" name='mdp' value='#ENV{mdp}' placeholder="Mot de passe" required />
+        </label>[<span class='erreur'>(#ENV**{erreurs}|table_valeur{mdp})</span>]
+        <br/>
+        <input type='submit' name='ok' value='ok' />
+    </form>
+  </div>
 </body>
