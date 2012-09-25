@@ -8,4 +8,9 @@
  <description>Ce plugin permet l'ajout de petites annonces. Il est distribu&eacute; sous licence GNU/GPL</description>
  <fonctions>annonces_fonctions.php</fonctions>
  <options>annonces_options.php</options>
+ <pipeline>
+        <nom>declarer_tables_interfaces</nom>
+        <inclure>base/pipelines_annonces.php</inclure>
+        <action>init_tables_moderation</action>
+ </pipeline>
 </plugin>

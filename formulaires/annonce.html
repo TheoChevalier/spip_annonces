@@ -13,7 +13,7 @@
         <li class='editer saisie_texte_message_auteur'>
 				<label for="texte_message_auteur#ENV{id}"><:info_texte_message:> <:info_obligatoire_02:></label>
 				[<span class="erreur_message">(#ENV*{erreurs}|table_valeur{texte_message_auteur})</span>]
-				<textarea name="texte_message_auteur" id="texte_message_auteur#ENV{id}" rows="10" cols="60"[(#HTML5) required="required"]>#ENV{texte_message_auteur}</textarea>
+				<textarea name="texte_message_auteur" id="texte_message_auteur#ENV{id}" rows="10" cols="60" required="required">#ENV{texte_message_auteur}</textarea>
 			</li>
         <input type='submit' name='ok' value="Inscription" />
     </form>
