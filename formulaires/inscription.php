@@ -1,6 +1,6 @@
 <?php    function formulaires_inscription_charger_dist(){
             $valeurs = array('email'=>'','nom'=>'', 'mdp' => '');
-            if ($GLOBALS['visiteur_session']['email'])
+            if (isset($GLOBALS['visiteur_session']['email']))
                     $valeurs['email'] = $GLOBALS['visiteur_session']['email'];
             return $valeurs;
     }
