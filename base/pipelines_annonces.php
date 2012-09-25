@@ -19,7 +19,7 @@
         $new_moderation = array(
                 "id_annonce" => "INT(11) NOT NULL AUTO_INCREMENT"
                 "titre" => "VARCHAR(300) NOT NULL",
-                "contenu" => "VARCHAR(100) NOT NULL",
+                "contenu" => "TEXT NOT NULL",
                 "tel" => "VARCHAR(10)",
                 "prix" => "INT(11)",
         );
