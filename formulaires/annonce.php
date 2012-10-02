@@ -18,7 +18,7 @@
     }
     function formulaires_annonce_traiter_dist(){
             include_spip('base/abstract_sql');
-        	/*sql_insertq('spip_annonces_i', array(
+        	/*sql_insertq('spip_annonces_moderation', array(
                             'id_annonce' => '',
 							'titre' => _request('titre'),
 							'contenu' => _request('contenu'),

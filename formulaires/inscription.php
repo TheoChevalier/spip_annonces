@@ -27,10 +27,11 @@
 					$inscrit = sql_fetsel('*', 'spip_annonces_i', 'email='.sql_quote(_request('email')));
           if(!$inscrit) {
             echo "ET COUCOU";
-            	sql_insertq('spip_annonces_i', array(
+            	sql_insertq('spip_annonces_inscription', array(
 								'email' => _request('email'),
 								'nom' => _request('nom'),
-								'mdp' => _request('mdp')
+								'mdp' => _request('mdp'),
+                                'key' => md5(microtime(TRUE)*100000),
 							));
             
           }else { echo "Batard t'es déjà inscrit. Biatch. GTFO. Coup de couteau dans la GLO-O-O-O-O-TE !";}
