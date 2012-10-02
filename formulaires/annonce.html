@@ -10,9 +10,9 @@
         <input type='text' name='titre' value='#ENV{titre}' placeholder="Titre" required />
         [<span class='erreur'>(#ENV**{erreurs}|table_valeur{titre})</span>]
         <br />
-				<label for="texte_message_auteur#ENV{id}"><:info_texte_message:> <:info_obligatoire_02:></label></br>
-				[<span class="erreur_message">(#ENV*{erreurs}|table_valeur{texte_message_auteur})</span>]
-				<textarea name="texte_message_auteur" id="texte_message_auteur#ENV{id}" rows="10" cols="60"[(#HTML5) required="required"]>#ENV{texte_message_auteur}</textarea></br>
+				<label for="contenu#ENV{id}"><:info_texte_message:> <:info_obligatoire_02:></label></br>
+				[<span class="erreur_message">(#ENV*{erreurs}|table_valeur{contenu})</span>]</br>
+				<textarea name="contenu" id="contenu#ENV{id}" rows="10" cols="60"[(#HTML5) required="required"]>#ENV{contenu}</textarea></br>
       <label> Téléphone (optionnel)</label></br>
         <input type='text' name='tel' value='#ENV{tel}' placeholder="Numéro de Téléphone"/>
       [<span class='erreur'>(#ENV**{erreurs}|table_valeur{tel})</span>]</br>
