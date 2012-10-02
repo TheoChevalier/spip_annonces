@@ -13,4 +13,5 @@
         <inclure>base/pipelines_annonces.php</inclure>
         <action>init_tables_moderation</action>
  </pipeline>
+ <install>base/pipelines_annonces.php</install>
 </plugin>

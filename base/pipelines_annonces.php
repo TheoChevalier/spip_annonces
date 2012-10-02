@@ -4,7 +4,7 @@
                 "email" => "VARCHAR(100) NOT NULL",
                 "nom" => "VARCHAR(100) NOT NULL",
                 "mdp" => "VARCHAR(32) NOT NULL",
-                "key" => "VARCHAR(16) NOT NULL",
+                "key" => "VARCHAR(50) NOT NULL",
                 "confirm" => "BOOLEAN NOT NULL"
         );
 
@@ -32,12 +32,12 @@
                 "email" => "email"
         );
 
-        $tables_principales['spip_inscription'] = array(
+        $tables_principales['spip_annonces_inscription'] = array(
                 'field' => &$new_inscription,
                 'key' => &$new_inscription_cles,
                 'join' => &$new_inscription_join
         );
-        $tables_principales['spip_moderation'] = array(
+        $tables_principales['spip_annnces_moderation'] = array(
                 'field' => &$new_moderation,
                 'key' => &$new_moderation_cles,
                 'join' => &$new_moderation_join
