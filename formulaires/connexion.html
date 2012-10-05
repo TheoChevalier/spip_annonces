@@ -6,15 +6,17 @@
   <div id="connexion">
     <form name="connexion" action="#ENV{action}" method="post">
       #ACTION_FORMULAIRE{#ENV{action}}
-      <label>Login : </label></br>
-        <input type='text' name='login' value='#ENV{login}' placeholder="Adresse Email" required />
+      <label>Nom d'utilisateur :
+        <input type='text' name='login' value='#ENV{login}' placeholder="Nom d'utilisateur" required />
+      </label>
         [<span class='erreur'>(#ENV**{erreurs}|table_valeur{login})</span>]
         <br />
-        <label>Password : </label></br>
-        <input type='password' name='mdp' value='#ENV{mdp}' placeholder="Password" required />
+        <label>Mot de passe :
+          <input type='password' name='mdp' value='#ENV{mdp}' placeholder="Mot de passe" required />
+        </label>
         [<span class='erreur'>(#ENV**{erreurs}|table_valeur{titre})</span>]
         <br />
-        <input type='submit' name='ok' value="Connexion" />
+        <input type='submit' name='ok' value="Me connecter" />
     </form>
   </div>
 </body>

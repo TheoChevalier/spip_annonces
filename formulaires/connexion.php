@@ -9,15 +9,16 @@
             if (!_request($obligatoire)) $erreurs[$obligatoire] = 'Ce champ est obligatoire';
 
         include_spip('inc/filtres');
-        if(!preg_match("/^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/i", _request('login')))
-        $erreurs['login'] = 'Votre mail n\'est pas valide';
+        if(!preg_match("/^.{4,32}$/i", _request('login')))
+        $erreurs['nom'] = 'Votre nom doit être composé de 4 à 32 caractères';
 
         include_spip('base/abstract_sql');
-        $inscrit = sql_fetsel('*', 'spip_annonces_inscription', 'email='.sql_quote(_request('login')));
+        $inscrit = sql_fetsel('*', 'spip_annonces_inscription', 'nom='.sql_quote(_request('login')));
         if($inscrit)
         {
-            if($inscrit['mdp'] != _request('mdp'))
+          if($inscrit['mdp'] != _request('mdp')) {
 
+          }
         }
         else
         {
@@ -30,6 +31,6 @@
         include_spip('base/abstract_sql');
         
 
-        echo "Bravo";
+        return "Bravo";
     }
 ?>

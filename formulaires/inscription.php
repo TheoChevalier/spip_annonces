@@ -19,6 +19,9 @@ function formulaires_inscription_verifier_dist(){
   
   if(!preg_match("/^.{4,32}$/i", _request('mdp')))
     $erreurs['mdp'] = 'Votre mot de passe n\'est pas valide';
+    
+    if(!preg_match("/^.{4,32}$/i", _request('nom')))
+    $erreurs['nom'] = 'Votre nom doit être composé de 4 à 32 caractères';
   
   if (count($erreurs))
     $erreurs['message_erreur'] = 'Votre saisie contient des erreurs !';

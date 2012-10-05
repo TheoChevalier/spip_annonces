@@ -14,7 +14,7 @@ function annonces_upgrade($nom_meta_base_version, $version_cible) {
   }
 
   if (version_compare($current_version,"1.1","<")) {
-    maj_tables($upgrade_tables=array('spip_annonces_inscription', 'spip_annonces_moderation'));
+    maj_tables(array('spip_inscription', 'spip_moderation'));
     ecrire_meta($nom_meta_base_version,$current_version="1.1");
   }
 }
