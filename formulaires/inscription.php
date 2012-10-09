@@ -39,19 +39,21 @@ function formulaires_inscription_traiter_dist(){
       'key' => md5(microtime(TRUE)*100000),
     ));
 
+      include_spip('inc/mail');
+
       $t = "Confirmation inscription";
       $titre = nettoyer_titre_email($t);
       $message = nettoyer_caracteres_mail($_request('message'));
       $headers  = 'MIME-Version: 1.0' . $passage_ligne;
       $headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
-      $headers .= 'From: "'.WEB_SERVER.'" <no-reply@'.WEB_SERVER.'>' . $passage_ligne;
-      inc_envoyer_mail_dist($_request('email'), $titre, $message, $GLOBALS['meta']['email_webmaster'], $headers);
+      $headers .= 'http://"' . $_SERVER['HTTP_HOST'] . '" <no-reply@' . $_SERVER['HTTP_HOST'] . '>' . $passage_ligne;
+      envoyer_mail_dist($_request('email'), $titre, $message, $GLOBALS['meta']['email_webmaster'], $headers);
 
       return array('message_ok'=>'Votre inscription a bien été pris en compte. Vous recevrez prochainement un mail !');
   }
   else
   {
-    return array('message_ok'=>'Vous êtesdéjà inscrit !');
+    return array('message_ok'=>'Vous êtes déjà inscrit !');
   }
   
   
