@@ -1,4 +1,6 @@
 <?php
+if (!defined('_ECRIRE_INC_VERSION')) return;
+
 function annonces_declarer_tables_interfaces($interface){
   $interface['table_des_tables']['inscription'] = 'inscription';
   $interface['table_des_tables']['moderation'] = 'moderation';
@@ -32,15 +34,14 @@ function annonces_declarer_tables_principales($tables_principales){
           "PRIMARY KEY" => "id_annonce"
   );
 
-  $tables_principales['spip_inscription'] = array(
+  $tables_principales['spip_annonces_inscription'] = array(
           'field' => &$new_inscription,
           'key' => &$new_inscription_cles
   );
-  $tables_principales['spip_moderation'] = array(
+  $tables_principales['spip_annonces_moderation'] = array(
           'field' => &$new_moderation,
           'key' => &$new_moderation_cles
   );
-  
   return $tables_principales;
 }
 

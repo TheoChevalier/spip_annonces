@@ -6,13 +6,14 @@
   <div id="annonces_nouvelle">
     <form name="annonces_nouvelle" action="#ENV{action}" method="post">
       #ACTION_FORMULAIRE{#ENV{action}}
+      [<span class='erreur'>(#ENV**{erreurs}|table_valeur{connexion})</span>]
       <label>Titre de votre annonce </label><:info_obligatoire_02:></br>
         <input type='text' name='titre' value='#ENV{titre}' placeholder="Titre" required />
         [<span class='erreur'>(#ENV**{erreurs}|table_valeur{titre})</span>]
         <br />
-				<label for="contenu#ENV{id}"><:info_texte_message:> <:info_obligatoire_02:></label></br>
-				[<span class="erreur_message">(#ENV*{erreurs}|table_valeur{contenu})</span>]</br>
-				<textarea name="contenu" id="contenu#ENV{id}" rows="10" cols="60"[(#HTML5) required="required"]>#ENV{contenu}</textarea></br>
+        <label for="contenu#ENV{id}"><:info_texte_message:> <:info_obligatoire_02:></label></br>
+        [<span class="erreur_message">(#ENV*{erreurs}|table_valeur{contenu})</span>]</br>
+        <textarea name="contenu" id="contenu#ENV{id}" rows="10" cols="60" required="required">#ENV{contenu}</textarea></br>
       <label> Téléphone (optionnel)</label></br>
         <input type='text' name='tel' value='#ENV{tel}' placeholder="Numéro de Téléphone"/>
       [<span class='erreur'>(#ENV**{erreurs}|table_valeur{tel})</span>]</br>

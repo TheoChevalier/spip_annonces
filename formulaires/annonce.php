@@ -4,6 +4,8 @@
     }
         function formulaires_annonce_verifier_dist(){
             $erreurs = array();
+            if (!$_SESSION['annonces_user'])
+              $erreurs['connexion'] = 'Vous devez être connecté pour déposer une annonce !';
             foreach(array('titre','contenu') as $obligatoire)
             if (!_request($obligatoire)) $erreurs[$obligatoire] = 'Ce champ est obligatoire';
            
@@ -18,13 +20,13 @@
     }
     function formulaires_annonce_traiter_dist(){
             include_spip('base/abstract_sql');
-        	/*sql_insertq('spip_annonces_moderation', array(
-                            'id_annonce' => '',
-							'titre' => _request('titre'),
-							'contenu' => _request('contenu'),
-							'tel' => _request('tel'),
-                            'prix' => _request('prix')
-						));*/
+            sql_insertq('spip_annonces_moderation', array(
+              'id_annonce' => '',
+              'titre' => _request('titre'),
+              'contenu' => _request('contenu'),
+              'tel' => _request('tel'),
+              'prix' => _request('prix')
+            ));
 
             echo "Bravo";
     }

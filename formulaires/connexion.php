@@ -17,7 +17,7 @@
         if($inscrit)
         {
           if($inscrit['mdp'] != _request('mdp')) {
-
+            $erreurs[$invalide] = 'Mauvais mot de passe';
           }
         }
         else
@@ -29,8 +29,8 @@
     }
     function formulaires_connexion_traiter_dist(){
         include_spip('base/abstract_sql');
+        $_SESSION['annonces_user'] = _request('login');
+        echo $_SESSION['annonces_user'];
         
-
-        return "Bravo";
     }
 ?>

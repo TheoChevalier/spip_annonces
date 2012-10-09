@@ -1,21 +1,21 @@
 <plugin>
  <nom>Annonces</nom>
- <version>0.0</version>
+ <version>0.3.0</version>
+ <version_base>0.3</version_base>
  <prefix>annonces</prefix>
-  <etat>dev</etat>
+ <etat>dev</etat>
+ <licence>GPL</licence>
  <auteur>Théo Chevalier [contact->mailto:contact@theochevalier.fr]
  _ [mon site->http://www.theochevalier.fr] - ................</auteur>
  <description>Ce plugin permet l'ajout de petites annonces. Il est distribu&eacute; sous licence GNU/GPL</description>
  <fonctions>annonces_fonctions.php</fonctions>
- <version_base>0.0</version_base>
  <install>base/annonces_upgrade.php</install>
- <options>annonces_options.php</options>
  <pipeline>
         <nom>declarer_tables_interfaces</nom>
         <inclure>base/pipelines_annonces.php</inclure>
  </pipeline>
-<pipeline>
-        <nom>declarer_tables_principales</nom>
-        <inclure>base/pipelines_annonces.php</inclure>
-</pipeline>
+
+ <pipeline nom="declarer_tables_principales" inclure="base/pipelines_annonces.php" />
+ <necessite id="SPIP" version="[3.0.0-dev;3.0.*]" />
+ <categorie>edition</categorie>
 </plugin>
