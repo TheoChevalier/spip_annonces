@@ -27,6 +27,7 @@ function formulaires_inscription_verifier_dist(){
     $erreurs['message_erreur'] = 'Votre saisie contient des erreurs !';
   return $erreurs;
 }
+
 function formulaires_inscription_traiter_dist(){
   include_spip('base/abstract_sql');
   $inscrit = sql_fetsel('*', 'spip_annonces_inscription', 'email='.sql_quote(_request('email')));
@@ -37,14 +38,23 @@ function formulaires_inscription_traiter_dist(){
       'mdp' => _request('mdp'),
       'key' => md5(microtime(TRUE)*100000),
     ));
-  }
-  $email_to = $GLOBALS['meta']['email_webmaster'];
-  $email_from = _request('email');
-  $sujet = 'Formulaire de contact';
-  $message = _request('message');
-  $envoyer_mail($email_to,$sujet,$message,$email_from);
-  return array('message_ok'=>'Votre message a bien été pris en compte. Vous recevrez prochainement une réponse !');
-}
 
+      $t = "Confirmation inscription";
+      $titre = nettoyer_titre_email($t);
+      $message = nettoyer_caracteres_mail($_request('message'));
+      $headers  = 'MIME-Version: 1.0' . $passage_ligne;
+      $headers .= 'Content-type: text/html; charset=utf-8' . $passage_ligne;
+      $headers .= 'From: "'.WEB_SERVER.'" <no-reply@'.WEB_SERVER.'>' . $passage_ligne;
+      inc_envoyer_mail_dist($_request('email'), $titre, $message, $GLOBALS['meta']['email_webmaster'], $headers);
+
+      return array('message_ok'=>'Votre inscription a bien été pris en compte. Vous recevrez prochainement un mail !');
+  }
+  else
+  {
+    return array('message_ok'=>'Vous êtesdéjà inscrit !');
+  }
+  
+  
+}
 
 ?>
