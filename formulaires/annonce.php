@@ -4,8 +4,8 @@
     }
         function formulaires_annonce_verifier_dist(){
             $erreurs = array();
-            if (!$_SESSION['annonces_user'])
-              $erreurs['connexion'] = 'Vous devez être connecté pour déposer une annonce !';
+            //if (!$_SESSION['annonces_user'])
+            //  $erreurs['connexion'] = 'Vous devez être connecté pour déposer une annonce !';
             foreach(array('titre','contenu') as $obligatoire)
             if (!_request($obligatoire)) $erreurs[$obligatoire] = 'Ce champ est obligatoire';
            
