@@ -25,7 +25,9 @@
               'titre' => _request('titre'),
               'contenu' => _request('contenu'),
               'tel' => _request('tel'),
-              'prix' => _request('prix')
+              'prix' => _request('prix')?
+              'email' => $mail,
+              'date' => date('Y-m-d')
             ));
 
             echo "Bravo";
