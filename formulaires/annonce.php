@@ -25,10 +25,10 @@
               'titre' => _request('titre'),
               'contenu' => _request('contenu'),
               'tel' => _request('tel'),
-              'prix' => _request('prix')?
-              'email' => $mail,
-              'date' => date('Y-m-d')
-            ));
+              'prix' => _request('prix'),
+              'email' => $GLOBALS['mail'],
+              'date' => 'plop'
+            ))or die(mysql_error());
 
             echo "Bravo";
     }
